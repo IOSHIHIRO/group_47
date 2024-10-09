@@ -38,7 +38,6 @@ class Computer:
     def memory(self,value):
         self.__memory=value
 
-
     def make_computations (self):
         cru_numder = int(self.cpu)
         memory_number = int(self.memory)
