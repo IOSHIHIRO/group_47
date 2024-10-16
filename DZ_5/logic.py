@@ -8,7 +8,7 @@ def play_game(min_number, max_number, max_attempts, initial_capital):
     attempts = 0
 
     while attempts < max_attempts and capital > 0:
-        print(f'Ваш макс капитал {capital}')
+        print(f'Ваш макс капитал составляет {capital}')
         guess = int(input("Угадайте число от 1 до 20: "))
         attempts += 1
 
@@ -21,6 +21,6 @@ def play_game(min_number, max_number, max_attempts, initial_capital):
             print("Не угадали. Осталось попыток:", max_attempts - attempts)
 
     if capital == 0:
-        print("Вы проиграли!")
+        print("Увы вы проиграли!")
     else:
         print("Игра окончена. Ваш итоговый капитал:", capital)
