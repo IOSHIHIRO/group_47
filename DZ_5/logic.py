@@ -1,5 +1,4 @@
 from random import randint
-from decouple import config
 
 def play_game(min_number, max_number, max_attempts, initial_capital):
 
@@ -24,3 +23,4 @@ def play_game(min_number, max_number, max_attempts, initial_capital):
         print("Увы вы проиграли!")
     else:
         print("Игра окончена. Ваш итоговый капитал:", capital)
+        
