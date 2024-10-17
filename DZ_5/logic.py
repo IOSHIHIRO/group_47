@@ -13,11 +13,11 @@ def play_game(min_number, max_number, max_attempts, initial_capital):
 
         if guess == secret_number:
             capital *= 2
-            print("Вы угадали! Ваш капитал:", capital)
+            print("Вы угадали! Ваш капитал составляет:", capital)
             break
         else:
             capital -= 10
-            print("Не угадали. Осталось попыток:", max_attempts - attempts)
+            print("Вы не угадали. Осталось попыток:", max_attempts - attempts)
 
     if capital == 0:
         print("Увы, вы проиграли!")
