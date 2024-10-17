@@ -20,7 +20,7 @@ def play_game(min_number, max_number, max_attempts, initial_capital):
             print("Не угадали. Осталось попыток:", max_attempts - attempts)
 
     if capital == 0:
-        print("Увы вы проиграли!")
+        print("Увы, вы проиграли!")
     else:
         print("Игра окончена. Ваш итоговый капитал:", capital)
         
