@@ -9,11 +9,12 @@ def selection_sort(arr):
         arr[i], arr[min_idx] = arr[min_idx], arr[i]
     return arr
 
-def binary_search(arr):
-    value = 22
+def binary_search(arr,value):
+    n = len(arr)
     low = 0
     high = len(arr) - 1
     mid = len(arr) // 2
+    resultOK = False
 
     while arr[mid] != value and low <= high:
         if value > arr[mid]:
@@ -21,12 +22,17 @@ def binary_search(arr):
         else:
             high = mid - 1
         mid = (low + high) // 2
-    if low > high:
-        return 'No value'
+    if value == arr[mid]:
+        resultOK = True
+
+    if resultOK == True:
+        print(f'ID of {value} == {mid}')
     else:
-        return 'ID =', mid
+        print('No velue')
 
 my_list = [50, 26, 7, 22, 10, 77,99,101,33]
 sorted_list = selection_sort(my_list)
 print(sorted_list)
-print(binary_search(sorted_list))
+print(binary_search(my_list,50))
+
+
