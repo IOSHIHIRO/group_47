@@ -81,6 +81,19 @@ def select_employees_price(price_limit):
     except sqlite3.Error as error:
         print(error)
 
+def select_employees_product_title():
+    sql = '''SELECT * FROM employees WHERE product_title LIKE "A%"'''
+    try:
+        with sqlite3.connect(hw_db) as conn:
+            cursor = conn.cursor()
+            cursor.execute(sql)
+            rows = cursor.fetchall()
+            for row in rows:
+                print(row)
+    except sqlite3.Error as error:
+        print(error)
+
+
 products_table = '''
 CREATE TABLE employees (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -139,7 +152,8 @@ CREATE TABLE employees (
 # select_all_employees()
 
 
-# select_employees_price(300)
+select_employees_price(300)
+select_employees_product_title()
 
 # my_connection = create_connection(hw_db)
 # if my_connection is not None:
