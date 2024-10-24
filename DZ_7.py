@@ -25,29 +25,29 @@ def create_table(sql):
         print(error)
 
 
-def insert_employees(employees):
-    sql = '''INSERT INTO employees(product_title,price,quantitu) 
+def insert_employees(products):
+    sql = '''INSERT INTO products(product_title,price,quantitu) 
     VALUES(?,?,?)'''
     try:
         with sqlite3.connect(hw_db) as conn:
             cursor = conn.cursor()
-            cursor.execute(sql, employees)
+            cursor.execute(sql, products)
     except sqlite3.Error as error:
         print(error)
 
 
-def update_employees(employees):
-    sql = '''UPDATE employees SET price = ?,quantitu = ? WHERE id = ?'''
+def update_employees(products):
+    sql = '''UPDATE products SET price = ?,quantitu = ? WHERE id = ?'''
     try:
         with sqlite3.connect(hw_db) as conn:
             cursor = conn.cursor()
-            cursor.execute(sql, employees)
+            cursor.execute(sql, products)
     except sqlite3.Error as error:
         print(error)
 
 
 def delete_employees(id):
-    sql = '''DELETE FROM employees WHERE id = ?'''
+    sql = '''DELETE FROM products WHERE id = ?'''
     try:
         with sqlite3.connect(hw_db) as conn:
             cursor = conn.cursor()
@@ -57,7 +57,7 @@ def delete_employees(id):
 
 
 def select_all_employees():
-    sql = '''SELECT product_title FROM employees'''
+    sql = '''SELECT product_title FROM products'''
     try:
         with sqlite3.connect(hw_db) as conn:
             cursor = conn.cursor()
@@ -70,7 +70,7 @@ def select_all_employees():
 
 
 def select_employees_price(price_limit):
-    sql = '''SELECT price FROM employees WHERE price >= ?'''
+    sql = '''SELECT price FROM products WHERE price >= ?'''
     try:
         with sqlite3.connect(hw_db) as conn:
             cursor = conn.cursor()
@@ -82,7 +82,7 @@ def select_employees_price(price_limit):
         print(error)
 
 def select_employees_product_title():
-    sql = '''SELECT * FROM employees WHERE product_title LIKE "A%"'''
+    sql = '''SELECT * FROM products WHERE product_title LIKE "A%"'''
     try:
         with sqlite3.connect(hw_db) as conn:
             cursor = conn.cursor()
@@ -95,7 +95,7 @@ def select_employees_product_title():
 
 
 products_table = '''
-CREATE TABLE employees (
+CREATE TABLE products (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     product_title VARCHAR(200) NOT NULL,
     price FLOAT(10,2) NOT NULL DEFAULT 0,
@@ -105,25 +105,25 @@ CREATE TABLE employees (
 
 
 # create_table(products_table)
-# insert_employees(('Banana', 159.0,1))
-# insert_employees(('Apple', 130.0,1))
-# insert_employees(('Qear', 145.0,1))
-# insert_employees(('Raspberry', 240.0,1))
-# insert_employees(('Strawberry', 255.0,1))
-# insert_employees(('Cherry', 305.0,1))
-# insert_employees(('Mandarin', 270.0,1))
-# insert_employees(('Pineapple', 270.0,1))
-# insert_employees(('Lemon ', 140.99,1))
-# insert_employees(('Kiwi', 310.0,1))
-# insert_employees(('Pomegranate', 263.0,1))
-# insert_employees(('Persimmon', 320.0,1))
-# insert_employees(('Coconut', 345.0,1))
-# insert_employees(('Papaya', 333.33,1))
-# insert_employees(('Avocado', 300.0,1))
-# insert_employees(('Apricot', 276.0,1))
-# insert_employees(('Lime', 290.0,1))
-# insert_employees(('Peach', 269.0,1))
-# insert_employees(('Mango', 320.0,1))
+# insert_employees(('Banana', 159.0,10))
+# insert_employees(('Apple', 130.0,10))
+# insert_employees(('Qear', 145.0,15))
+# insert_employees(('Raspberry', 240.0,15))
+# insert_employees(('Strawberry', 255.0,10))
+# insert_employees(('Cherry', 305.0,10))
+# insert_employees(('Mandarin', 270.0,20))
+# insert_employees(('Pineapple', 270.0,20))
+# insert_employees(('Lemon ', 140.99,40))
+# insert_employees(('Kiwi', 310.0,30))
+# insert_employees(('Pomegranate', 263.0,40))
+# insert_employees(('Persimmon', 320.0,20))
+# insert_employees(('Coconut', 345.0,10))
+# insert_employees(('Papaya', 333.33,20))
+# insert_employees(('Avocado', 300.0,40))
+# insert_employees(('Apricot', 276.0,30))
+# insert_employees(('Lime', 290.0,30))
+# insert_employees(('Peach', 269.0,10))
+# insert_employees(('Mango', 320.0,10))
 
 #Добавить изменения функции
 # update_employees((320,10,10))
@@ -145,6 +145,7 @@ CREATE TABLE employees (
 # update_employees((10,17))
 # update_employees((10,18))
 # update_employees((10,19))
+
 #Удалить обьект по id
 # delete_employees(3)
 
