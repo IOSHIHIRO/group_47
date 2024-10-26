@@ -153,8 +153,8 @@ CREATE TABLE products (
 # select_all_employees()
 
 
-select_employees_price(300)
-select_employees_product_title()
+# select_employees_price(300)
+# select_employees_product_title()
 
 # my_connection = create_connection(hw_db)
 # if my_connection is not None:
