@@ -1,20 +1,7 @@
 import sqlite3
 
 hw_db = '''hw.db'''
-# def create_connection(db_file):
-#     connection = None
-#     try:
-#         connection = sqlite3.connect(db_file)
-#     except sqlite3.Error as error:
-#         print(error)
-#     return connection
-#
-# def create_table(connection, sql):
-#     try:
-#         cursor = connection.cursor()
-#         cursor.execute(sql)
-#     except sqlite3.Error as error:
-#         print(error)
+
 
 def create_table(sql):
     try:
