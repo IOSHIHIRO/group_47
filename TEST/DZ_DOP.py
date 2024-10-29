@@ -1,10 +1,7 @@
 import sqlite3
 
-
 conn = sqlite3.connect('DZ.db')
 cursor = conn.cursor()
-
-
 
 def show_stores():
     cursor.execute("SELECT store_id, title FROM store")
@@ -12,7 +9,6 @@ def show_stores():
     print("Список магазинов:")
     for store in stores:
         print(f"{store[0]}. {store[1]}")
-
 
 
 def show_products_in_store(store_id):
